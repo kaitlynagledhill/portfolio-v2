@@ -1,26 +1,246 @@
-@import "tailwindcss";
+/* =========================================================
+   FONT IMPORTS
+   ========================================================= */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=DM+Serif+Text&display=swap');
+
+
+/* =========================================================
+   STYLESHEETS
+   ========================================================= */
+
+@import "./styles/layout.css";
+@import "./styles/hero.css";
+@import "./styles/nav.css";
+@import "./styles/work.css";
+@import "./styles/about.css";
+@import "./styles/contact.css";
+
+
+/* =========================================================
+   GLOBAL BASE
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  margin: 0;
+  padding: 0;
+  background: #0b0909;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #0b0909;
+}
+
+.portfolio {
+  min-height: 100vh;
+  background: #0b0909;
+}
+
+
+/* =========================================================
+   RESPONSIVE LAYOUT
+   ========================================================= */
+
+/* Hero and navigation */
+@media (max-width: 600px) {
+  .hero-overlay {
+    padding: 20px;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .hero-heading {
+    inset: 100px 0 0;
+    padding: 24px 20px;
+  }
+
+  .hero-heading h1 {
+    font-size: clamp(3.5rem, 15vw, 6rem);
+    line-height: 0.92;
+  }
+}
+
+/* About section */
+@media (max-width: 800px) {
+  .about-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 120px 24px 60px;
+  }
+
+  .about-heading {
+    font-size: clamp(2.8rem, 10vw, 5rem);
+  }
+
+  .about-body {
+    max-width: 560px;
+  }
+
+  .about-artwork {
+    width: 100%;
+    height: 420px;
+    min-height: 0;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 100px 20px 48px;
+  }
+
+  .about-artwork {
+    height: 340px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY: REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Hero aperture */
+  .aperture-opening {
+    animation: none;
+    visibility: visible;
+    opacity: 1;
+    transform: scale(2.5, 3.2);
+  }
+
+  /* Navigation */
+  .nav-entrance {
+    animation: none;
+  }
+
+  .nav-link {
+    transition: none;
+  }
+
+  .nav-link:hover {
+    transform: none;
+  }
+
+  /* Hero title */
+  .hero-line>* {
+    transform: none;
+    animation: none;
+  }
+
+  /* Hero description */
+  .hero-description {
+    opacity: 1;
+  }
+
+  .hero-description-line {
+    overflow: visible;
+  }
+
+  .hero-description-line>span {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Hero contact button */
+  .hero-contact:hover .contact-letter,
+  .hero-contact:focus-visible .contact-letter {
+    animation: none;
+  }
+
+  /* Background */
+  .hero-background {
+    animation: none;
+    opacity: 1;
+  }
+
+  /* About section */
+  .about-heading,
+  .about-line {
+    overflow: visible;
+  }
+
+  .about-heading>span,
+  .about-line>span {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Work section */
+  .work-preview,
+  .work-arrow {
+    transition: none;
+  }
+
+  /* Contact section */
+  .contact-interest-button:hover .contact-interest-letter,
+  .contact-interest-button:focus-visible .contact-interest-letter {
+    animation: none;
+  }
+
+  .contact-social-links a {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* =========================================================
+   GLOBAL ANIMATIONS
+   ========================================================= */
+
+@keyframes hero-line-rise {
+  0% {
+    transform: translateY(110%) rotate(8deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* Keyframes for the contact button's letter movement */
+@keyframes letter-bounce {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(calc(var(--bounce-x, 3px) * 0.5),
+        calc(var(--bounce-y, -8px) * 1.1)) rotate(calc(var(--bounce-rotate, 12deg) * 0.5));
+  }
+
+  60% {
+    transform: translate(calc(var(--bounce-x, 3px) * -0.65),
+        calc(var(--bounce-y, -8px) * -0.45)) rotate(calc(var(--bounce-rotate, 12deg) * -0.6));
+  }
+
+  80% {
+    transform: translate(calc(var(--bounce-x, 3px) * 0.25),
+        calc(var(--bounce-y, -8px) * 0.3)) rotate(calc(var(--bounce-rotate, 12deg) * 0.2));
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
 }
