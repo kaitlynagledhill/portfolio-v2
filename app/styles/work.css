@@ -1,0 +1,587 @@
+/* =========================================================
+   SELECTED WORK — SECTION
+   ========================================================= */
+
+.work-section {
+  position: relative;
+  z-index: 2;
+  padding: 120px 12vw 140px;
+
+  color: #fff8ed;
+  background: #0b0909;
+}
+
+.work-header {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 56px;
+  padding-left: 19px;
+
+}
+
+.work-eyebrow {
+  display: block;
+  margin-bottom: 16px;
+
+  color: rgba(255, 248, 237, 0.65);
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.work-heading {
+  overflow: hidden;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(1.5rem, 2.2vw, 1.9rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.work-heading>span,
+.work-heading-period {
+  color: #F5F0E6;
+}
+
+
+/* =========================================================
+   SELECTED WORK — HEADING REVEAL
+   ========================================================= */
+
+.work-heading-line {
+  display: block;
+  overflow: hidden;
+  padding-right: 0.12em;
+  margin-right: -0.12em;
+}
+
+.work-heading-line>span {
+  display: inline-block;
+  transform: translateY(110%) rotate(8deg);
+  transform-origin: left bottom;
+}
+
+.work-section.is-visible .work-heading-line>span {
+  animation: hero-line-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+
+/* =========================================================
+   SELECTED WORK — PROJECT GRID
+   ========================================================= */
+
+.work-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  max-width: 1163px;
+  margin: 0 auto;
+}
+
+.work-card {
+  display: grid;
+  grid-template-columns: 1.1fr 1.1fr;
+  align-items: stretch;
+  gap: 18px;
+
+  width: 100%;
+  padding: 0;
+
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+
+  border: 0;
+  color: inherit;
+  background: transparent;
+}
+
+.work-card:focus-visible {
+  outline: 1px solid #fff8ed;
+  outline-offset: 6px;
+}
+
+
+/* =========================================================
+   SELECTED WORK — INDIVIDUAL PROJECT PLACEMENT
+   ========================================================= */
+
+.work-card:nth-child(1) {
+  width: 94%;
+  margin-left: -14.9%;
+}
+
+.work-card:nth-child(2) {
+  width: 94%;
+  margin-left: 8%;
+}
+
+.work-card:nth-child(3) {
+  width: 94%;
+  margin-left: 14%;
+}
+
+.work-card:nth-child(4) {
+  width: 94%;
+  margin-left: 0.5%;
+}
+
+/* =========================================================
+   SELECTED WORK — PROJECT PREVIEWS
+   ========================================================= */
+
+.work-preview {
+  width: 100%;
+  aspect-ratio: 2.5 / 1;
+  align-self: center;
+  overflow: hidden;
+
+  background: #24211f;
+  transition: transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.work-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+
+  filter: grayscale(95%) sepia(40%) contrast(95%);
+  transform: scale(1);
+  transition:
+    filter 900ms ease,
+    transform 800ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.work-card:hover .work-preview {
+  transform: scale(0.96);
+}
+
+.work-card:hover .work-preview img {
+  transform: scale(1.14);
+}
+
+
+/* =========================================================
+   SELECTED WORK — ALTERNATING PROJECT LAYOUT
+   ========================================================= */
+
+.work-card:first-child .work-card-info {
+  align-items: flex-end;
+  text-align: left;
+}
+
+/* Odd projects: caption left, image right */
+.work-card:nth-child(odd) .work-preview {
+  order: 2;
+}
+
+.work-card:nth-child(odd) .work-card-info {
+  order: 1;
+}
+
+/* Odd projects after the first: bring text toward the image */
+.work-card:nth-child(odd):not(:first-child) .work-card-info {
+  align-items: flex-end;
+  text-align: right;
+}
+
+
+/* Even projects: image left, caption right */
+.work-card:nth-child(even) .work-preview {
+  order: 1;
+}
+
+.work-card:nth-child(even) .work-card-info {
+  order: 2;
+
+}
+
+
+
+
+
+/* =========================================================
+   SELECTED WORK — PROJECT DETAILS
+   ========================================================= */
+
+.work-card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px;
+
+  min-width: 0;
+  padding: 12px 0;
+}
+
+.work-card-info h3 {
+  margin: 0;
+
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(2.25rem, 3.5vw, 3.5rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.work-card-info p {
+  max-width: 420px;
+  margin: 0;
+
+  color: rgba(255, 248, 237, 0.68);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.work-arrow {
+  margin-top: 8px;
+  font-size: 1.2rem;
+  transition: transform 200ms ease;
+}
+
+.work-card:hover .work-arrow {
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   SELECTED WORK — RESPONSIVE
+   ========================================================= */
+
+/* Tablet and mobile */
+@media (max-width: 700px) {
+  .work-section {
+    padding: 72px 24px 80px;
+  }
+
+  .work-grid {
+    gap: 44px;
+  }
+
+  .work-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .work-card:nth-child(1),
+  .work-card:nth-child(2),
+  .work-card:nth-child(3),
+  .work-card:nth-child(4) {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .work-card .work-preview,
+  .work-card .work-card-info {
+    order: initial !important;
+  }
+
+  .work-preview {
+    aspect-ratio: 2.5 / 1;
+  }
+
+  .work-card-info {
+    padding: 0;
+    gap: 8px;
+  }
+
+  .work-card-info h3 {
+    font-size: 2.25rem;
+  }
+}
+
+
+/* =========================================================
+   PROJECT EXPERIENCE — BACKDROP
+   ========================================================= */
+
+.project-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  overflow-y: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px 24px;
+
+  background-image:
+    linear-gradient(rgba(11, 9, 9, 0.82),
+      rgba(11, 9, 9, 0.82)),
+    url("/images/rococo-hero.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  animation: project-background-in 500ms ease both;
+}
+
+
+/* =========================================================
+   PROJECT EXPERIENCE — MODAL LAYOUT
+   ========================================================= */
+
+.project-modal {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 0;
+  max-height: calc(100dvh - 96px);
+  padding: 52px 9vw;
+  box-sizing: border-box;
+
+  color: #fff8ed;
+  background: transparent;
+  border: 0;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   PROJECT EXPERIENCE — CLOSE BUTTON
+   ========================================================= */
+
+.project-modal-close {
+  position: fixed;
+  top: 32px;
+  right: 5vw;
+  z-index: 3;
+
+  width: 44px;
+  height: 44px;
+
+  border: 1px solid rgba(255, 248, 237, 0.5);
+  border-radius: 50%;
+
+  color: #fff8ed;
+  background: rgba(11, 9, 9, 0.2);
+
+  font: inherit;
+  font-size: 28px;
+  line-height: 1;
+
+  cursor: pointer;
+  transition: background 200ms ease, transform 200ms ease;
+}
+
+.project-modal-close:hover {
+  background: rgba(255, 248, 237, 0.15);
+  transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   PROJECT EXPERIENCE — PROJECT CONTENT
+   ========================================================= */
+
+.project-detail {
+  position: relative;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  color: #fff8ed;
+  background: transparent;
+}
+
+
+.project-detail-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 1500px;
+  min-height: 0;
+  margin: 0 auto;
+}
+
+.project-detail-copy {
+  width: 100%;
+  max-width: 760px;
+  text-align: left;
+}
+
+.project-modal-category {
+  margin: 0 0 16px;
+
+  color: rgba(255, 248, 237, 0.7);
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-detail-copy h2 {
+  max-width: none;
+  margin: 0 0 36px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(4rem, 7vw, 7.5rem);
+  font-weight: 500;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   PROJECT EXPERIENCE — IMAGE
+   ========================================================= */
+
+.project-detail-image {
+  width: 100%;
+  max-width: 640px;
+  justify-self: end;
+  align-self: center;
+  overflow: visible;
+  background: transparent;
+}
+
+.project-detail-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   PROJECT EXPERIENCE — DESCRIPTION & LINK
+   ========================================================= */
+
+.project-modal-description {
+  max-width: none;
+}
+
+.project-modal-description h3 {
+  margin: 32px 0 12px;
+  color: rgba(255, 248, 237, 0.6);
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-modal-description p {
+  margin: 0;
+  color: rgba(255, 248, 237, 0.92);
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(1.05rem, 1.2vw, 1.15rem);
+  line-height: 1.75;
+}
+
+.project-modal-link {
+  display: inline-block;
+  margin-top: 32px;
+  color: #fff8ed;
+  font-family: "DM Mono", monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  transition: opacity 200ms ease;
+}
+
+.project-modal-link:hover {
+  opacity: 0.65;
+}
+
+.project-modal-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.project-modal-tech span {
+  padding: 7px 12px;
+  border: 1px solid rgba(255, 248, 237, 0.3);
+  border-radius: 999px;
+
+  color: rgba(255, 248, 237, 0.85);
+  font-family: "DM Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+}
+
+
+/* =========================================================
+   PROJECT EXPERIENCE — ENTRANCE ANIMATIONS
+   ========================================================= */
+
+@keyframes project-background-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes project-content-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   PROJECT EXPERIENCE — RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .project-modal {
+    padding: 100px 24px 72px;
+  }
+
+  .project-detail-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    min-height: auto;
+  }
+
+  .project-detail-image {
+    max-width: 100%;
+  }
+
+  .project-modal-close {
+    top: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .project-modal {
+    padding: 90px 20px 60px;
+  }
+
+  .project-detail-copy h2 {
+    margin-bottom: 24px;
+  }
+}

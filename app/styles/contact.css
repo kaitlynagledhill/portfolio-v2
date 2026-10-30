@@ -1,0 +1,498 @@
+/* =========================================================
+   CONTACT SECTION
+   ========================================================= */
+
+.contact-section {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 120px 12vw;
+  overflow: hidden;
+
+  color: #fff8ed;
+  background: #0b0909;
+}
+
+
+/* =========================================================
+   CONTACT BACKGROUND
+   ========================================================= */
+
+.contact-background {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  will-change: opacity;
+}
+
+.contact-artwork {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* =========================================================
+   CONTACT CONTENT LAYOUT
+   ========================================================= */
+
+.contact-content {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: clamp(32px, 6vw, 100px);
+
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex: 0 0 auto;
+}
+
+.contact-title-wrap,
+.contact-options {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   CONTACT TYPOGRAPHY
+   ========================================================= */
+
+.contact-heading {
+  margin: 0;
+
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(4.5rem, 10vw, 10rem);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.25);
+}
+
+.contact-intro {
+  max-width: 650px;
+  margin: 0 0 28px;
+
+  color: #fff8ed;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.045em;
+
+  text-shadow:
+    0 2px 18px rgba(0, 0, 0, 0.2),
+    0 0 40px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================================
+   CONTACT HEADING REVEAL
+   ========================================================= */
+
+.contact-heading {
+  overflow: hidden;
+}
+
+.contact-heading-line {
+  display: block;
+  overflow: hidden;
+  padding-right: 0.12em;
+  margin-right: -0.12em;
+}
+
+.contact-heading-line>span {
+  display: inline-block;
+  transform: translateY(110%) rotate(8deg);
+  transform-origin: left bottom;
+}
+
+.contact-section.is-visible .contact-heading-line>span {
+  animation: hero-line-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0s;
+}
+
+
+/* =========================================================
+   CONTACT INTEREST BUTTONS
+   ========================================================= */
+
+.contact-interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 10px;
+}
+
+.contact-interest-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.015em;
+  overflow: hidden;
+  isolation: isolate;
+
+  padding: 10px 14px;
+  border: 1px solid #fff8ed;
+  border-radius: 2px;
+
+  color: #fff8ed;
+  background: transparent;
+
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(1rem, 1.3vw, 1.4rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.contact-interest-button:hover,
+.contact-interest-button:focus-visible {
+  color: #0b0909;
+  background: #fff8ed;
+}
+
+.contact-interest-button:focus-visible {
+  outline: 2px solid #fff8ed;
+  outline-offset: 4px;
+}
+
+.contact-interest-letter {
+  position: relative;
+  display: inline-block;
+}
+
+.contact-interest-space {
+  display: inline-block;
+  width: 0.2em;
+}
+
+
+/* =========================================================
+   CONTACT INTEREST LETTER ANIMATION
+   ========================================================= */
+
+.contact-interest-button:hover .contact-interest-letter,
+.contact-interest-button:focus-visible .contact-interest-letter {
+  animation: letter-bounce 900ms ease-in-out infinite alternate;
+}
+
+.contact-interest-letter:nth-child(3n + 1) {
+  --bounce-x: -3px;
+  --bounce-y: -7px;
+  --bounce-rotate: -10deg;
+}
+
+.contact-interest-letter:nth-child(3n + 2) {
+  --bounce-x: 3px;
+  --bounce-y: 6px;
+  --bounce-rotate: 12deg;
+}
+
+.contact-interest-letter:nth-child(3n) {
+  --bounce-x: -2px;
+  --bounce-y: -5px;
+  --bounce-rotate: -8deg;
+}
+
+.contact-interest-button .contact-interest-letter:nth-child(2) {
+  animation-delay: -150ms;
+}
+
+.contact-interest-button .contact-interest-letter:nth-child(3) {
+  animation-delay: -350ms;
+}
+
+.contact-interest-button .contact-interest-letter:nth-child(4) {
+  animation-delay: -500ms;
+}
+
+
+/* =========================================================
+   CONTACT CTA
+   ========================================================= */
+
+.contact-cta-row {
+  position: relative;
+  z-index: 2;
+  grid-column: 1 / -1;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 32px;
+
+  width: 100%;
+  box-sizing: border-box;
+  margin: 24px 0 0;
+  padding: 0;
+}
+
+.contact-cta-heading {
+  flex: 0 1 auto;
+  margin: 0;
+
+  color: #fff8ed;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.contact-cta-button {
+  position: relative;
+  top: auto;
+  right: auto;
+  flex-shrink: 0;
+  margin: 0;
+  transform: none;
+}
+
+
+/* =========================================================
+   CONTACT SOCIAL LINKS
+   ========================================================= */
+
+.contact-social-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  width: 100%;
+  max-width: 1400px;
+  box-sizing: border-box;
+  margin: 48px auto 0;
+  padding-top: 28px;
+
+  border-top: 1px solid rgba(255, 248, 237, 0.3);
+}
+
+.contact-social-group,
+.contact-meta-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(20px, 2.5vw, 40px);
+}
+
+.contact-social-group {
+  justify-content: flex-start;
+}
+
+.contact-meta-group {
+  justify-content: flex-end;
+}
+
+.contact-social-links a {
+  display: inline-block;
+
+  color: #fff8ed;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(1.2rem, 1.7vw, 1.6rem);
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+
+  transform-origin: left bottom;
+  transition:
+    transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 180ms ease;
+}
+
+.contact-social-links a:hover {
+  transform: translateY(-4px) rotate(3deg);
+  opacity: 0.65;
+}
+
+.contact-social-links a:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 5px;
+}
+
+
+/* =========================================================
+   RESPONSIVE LAYOUT
+   ========================================================= */
+
+/* Tablet */
+@media (max-width: 800px) {
+  .contact-section {
+    padding: 100px 24px;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .contact-interests {
+    gap: 10px 8px;
+  }
+
+  .contact-interest-button {
+    padding: 10px 12px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .contact-cta-row {
+    justify-content: flex-start;
+    gap: 24px;
+    margin-top: 64px;
+  }
+
+  .contact-social-links {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 36px;
+  }
+
+  .contact-social-group,
+  .contact-meta-group {
+    justify-content: flex-start;
+    gap: 20px 28px;
+  }
+
+  .contact-social-links a {
+    font-size: 1.25rem;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 80px 20px;
+  }
+
+  .contact-heading {
+    font-size: clamp(3.5rem, 13vw, 5.5rem);
+  }
+}
+
+/* =========================================================
+   CREDITS DRAWER
+   ========================================================= */
+
+.credits-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1998;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.credits-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1999;
+
+  width: min(42vw, 560px);
+  height: 100vh;
+  height: 100dvh;
+  box-sizing: border-box;
+  padding: 80px 56px;
+
+  overflow-y: auto;
+  color: #fff8ed;
+  background: #0b0909;
+}
+
+.credits-close {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #fff8ed;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+
+.credits-section {
+  margin-bottom: 48px;
+}
+
+.credits-section h3 {
+  margin: 0 0 18px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+
+
+.credits-section a {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+
+
+
+.credits-content h2 {
+  margin: 0 0 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 248, 237, 0.2);
+
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.credits-section p {
+  margin: 0 0 12px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.credits-note {
+  margin-top: 20px !important;
+  opacity: 0.55;
+  font-size: 1rem !important;
+}
+
+@media (max-width: 700px) {
+  .credits-panel {
+    width: 88vw;
+    padding: 76px 28px;
+  }
+}
