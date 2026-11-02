@@ -133,6 +133,10 @@ body {
     object-position: 70% center;
     /* 0% = left edge, 100% = right edge */
   }
+
+  .date-stamp {
+    display: none;
+  }
 }
 
 /* Tablet and below: lines flow as a normal paragraph */
@@ -315,6 +319,10 @@ body {
 
   .work-card-info h3 {
     font-size: clamp(2rem, 4.6vw, 3rem);
+  }
+
+  .date-stamp {
+    display: none;
   }
 }
 

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Navbar from "./components/Nav";
 import FlowerCanvas from "./components/FlowerCanvas";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
+import DateStamp from "./components/DateStamp";
 
 const aboutLines = [
   "I'm drawn to the intersection of design and",
@@ -168,57 +169,59 @@ export default function Home() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [activeProject]);
 
-  return (
-    <main className="portfolio">
-      <Navbar />
-      <div className="hero-transition">
-        <div className="hero-background">
-          <img
-            className="hero-artwork"
-            src="/images/rococo-hero.jpg"
-            alt=""
-            aria-hidden="true"
-          />
+    return (
+      <main className="portfolio">
+        <Navbar />
+        <div className="hero-transition">
+          <div className="hero-background">
+            <img
+              className="hero-artwork"
+              src="/images/rococo-hero.jpg"
+              alt=""
+              aria-hidden="true"
+            />
 
-          <svg
-            className="aperture-overlay"
-            viewBox="0 0 1000 1000"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <defs>
-              <mask
-                id="aperture-cutout"
-                maskUnits="userSpaceOnUse"
-                x="0"
-                y="0"
-                width="1000"
-                height="1000"
-              >
-                <rect width="1000" height="1000" fill="white" />
+<svg
+  className="aperture-overlay"
+  viewBox="0 0 1000 1000"
+  preserveAspectRatio="none"
+  aria-hidden="true"
+>
+  <defs>
+    <mask
+      id="aperture-cutout"
+      maskUnits="userSpaceOnUse"
+      x="0"
+      y="0"
+      width="1000"
+      height="1000"
+    >
+      <rect width="1000" height="1000" fill="white" />
 
-                <path
-                  className="aperture-opening"
-                  fill="black"
-                  d="M500 25
-   C550 28 585 55 625 85
-   C675 115 700 155 735 195
-   C780 240 805 295 815 355
-   C830 415 815 465 805 515
-   C795 565 800 617 772 672
-   C750 716 744 794 712 818
-   C660 857 550 930 480 945
-   C430 950 395 900 350 865
-   C305 830 260 790 220 745
-   C180 700 150 650 135 590
-   C120 530 125 475 145 420
-   C160 365 174 315 194 275
-   C214 230 237 148 287 93
-   C322 53 390 30 445 30
-   C470 27 485 25 500 25 Z"
+      <g className="aperture-peek">
+        <path
+          className="aperture-opening"
+          fill="black"
+          d="M500 25
+          C550 28 585 55 625 85
+          C675 115 700 155 735 195
+          C780 240 805 295 815 355
+          C830 415 815 465 805 515
+          C795 565 800 617 772 672
+          C750 716 744 794 712 818
+          C660 857 550 930 480 945
+          C430 950 395 900 350 865
+          C305 830 260 790 220 745
+          C180 700 150 650 135 590
+          C120 530 125 475 145 420
+          C160 365 174 315 194 275
+          C214 230 237 148 287 93
+          C322 53 390 30 445 30
+          C470 27 485 25 500 25 Z"
                 />
-              </mask>
-            </defs>
+              </g>
+            </mask>
+          </defs>
 
             <rect
               width="1000"
@@ -246,7 +249,10 @@ export default function Home() {
                 <span>DESIGNER</span>
               </span>
             </h1>
+            
           </div>
+
+          <DateStamp />          
 
           <p className="hero-description hero-description-desktop">
             <span className="hero-description-line">

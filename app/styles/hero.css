@@ -40,7 +40,20 @@
   transform: scale(var(--ap-sx), var(--ap-sy));
   visibility: hidden;
   opacity: 0;
-  animation: aperture-expand 2.2s cubic-bezier(0.65, 0, 0.35, 1) 2.3s forwards;
+  animation: aperture-expand 2.9s cubic-bezier(0.45, 0, 0.2, 1) 2.3s forwards;
+}
+
+.aperture-peek {
+  transform-box: view-box;
+  transform-origin: 500px 500px;
+  transition: transform 1s cubic-bezier(0.45, 0, 0.2, 1);   /* release: slower, eased */
+}
+
+.hero-transition:has(.date-stamp:hover) .aperture-peek,
+.hero-transition:has(.date-stamp:focus-visible) .aperture-peek {
+  transform: scale(0.17);
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @keyframes aperture-expand {
@@ -323,6 +336,9 @@
     animation: none;
     opacity: 1;
   }
+  .aperture-peek {
+  transition: none;
+}
 }
 
 /* =========================================================
@@ -513,4 +529,70 @@
   to {
     opacity: 0;
   }
+}
+
+.date-stamp {
+  --date-color: #fff8ed;
+  --date-accent: #fff8ed;
+  --date-stretch: 1.4;
+
+  position: absolute;
+  top: 14%;
+  left: 35%;
+  right: auto;
+  z-index: 4;
+
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.16em;
+  padding: 14px 28px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+
+  color: var(--date-color);
+  line-height: 0.9;
+  text-shadow:
+    0 2px 18px rgba(0, 0, 0, 0.18),
+    0 0 48px rgba(60, 30, 40, 0.22);
+
+  opacity: 0;
+  pointer-events: none;
+  animation: date-in 0.8s ease 4.5s forwards;
+}
+
+@keyframes date-in {
+  from {
+    opacity: 0;
+    pointer-events: none;
+  }
+  to {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.date-stamp__num {
+  display: inline-block;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(2.8rem, 4vw, 4.6rem);
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  transform: scaleY(var(--date-stretch));
+  transform-origin: center;
+}
+
+.date-stamp__month {
+  display: inline-block;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--date-accent);
+  transform: translateY(-1.3em);
+}
+
+.date-stamp:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 8px;
 }
