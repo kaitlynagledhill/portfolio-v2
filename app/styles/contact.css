@@ -343,11 +343,22 @@
 @media (max-width: 800px) {
   .contact-section {
     padding: 100px 24px;
+    --contact-lead-size: clamp(1.25rem, 3.6vw, 1.75rem);
   }
 
   .contact-content {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 32px;
+  }
+
+  .contact-heading {
+    font-size: clamp(4.5rem, 16vw, 8rem);
+  }
+
+  .contact-intro {
+    font-size: var(--contact-lead-size);
+    line-height: 1.1;
+    margin-bottom: 20px;
   }
 
   .contact-interests {
@@ -358,43 +369,104 @@
     padding: 10px 12px;
     font-size: 1.1rem;
   }
+
+  /* CTA: text left, button right, one row */
+  .contact-cta-row {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .contact-cta-heading {
+    flex: 1 1 auto;
+    min-width: 0;
+    text-align: left;
+    font-size: var(--contact-lead-size);
+    line-height: 1.1;
+  }
+
+  .contact-cta-button {
+    flex: 0 0 auto;
+    font-size: clamp(1.1rem, 3.6vw, 1.4rem);
+    padding: 10px 14px;
+  }
 }
 
 /* Mobile */
 @media (max-width: 700px) {
   .contact-cta-row {
-    justify-content: flex-start;
-    gap: 24px;
-    margin-top: 64px;
+    gap: 16px;
+    margin-top: 40px;
   }
 
   .contact-social-links {
     align-items: flex-start;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 8px;
     margin-top: 36px;
   }
 
   .contact-social-group,
   .contact-meta-group {
     justify-content: flex-start;
-    gap: 20px 28px;
+    gap: 16px 24px;
+  }
+
+  .contact-meta-group {
+    gap: 6px 8px;
   }
 
   .contact-social-links a {
-    font-size: 1.25rem;
+    font-size: var(--contact-lead-size);
+  }
+
+  .contact-meta-group a {
+    font-size: calc(var(--contact-lead-size) * 0.92);
+    font-weight: 500;
   }
 }
 
 /* Small mobile */
 @media (max-width: 480px) {
   .contact-section {
-    padding: 80px 20px;
+    padding: 80px 20px 56px;
+    --contact-lead-size: clamp(1.1rem, 5.4vw, 1.4rem);
+  }
+
+  .contact-interests {
+    gap: 8px 6px;
   }
 
   .contact-heading {
-    font-size: clamp(3.5rem, 13vw, 5.5rem);
+    font-size: clamp(4rem, 21vw, 6rem);
+  }
+
+  .contact-interest-button {
+    padding: 9px 11px;
+    font-size: 1rem;
+  }
+
+  .contact-artwork {
+    object-position: 70% center;
+  }
+}
+
+/* Touch screens: no sticky hover states */
+@media (hover: none) {
+  .contact-interest-button:hover {
+    color: #fff8ed;
+    background: transparent;
+  }
+
+  .contact-interest-button:hover .contact-interest-letter {
+    animation: none;
+  }
+
+  .contact-social-links a:hover {
+    transform: none;
+    opacity: 1;
   }
 }
 

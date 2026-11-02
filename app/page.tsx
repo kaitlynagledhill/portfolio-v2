@@ -5,6 +5,19 @@ import Navbar from "./components/Nav";
 import FlowerCanvas from "./components/FlowerCanvas";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 
+const aboutLines = [
+  "I'm drawn to the intersection of design and",
+  "technology, and the possibilities that open up",
+  "when the two come together. I work with",
+  "businesses and individuals to strengthen",
+  "their presence and turn ideas into something",
+  "tangible, from shaping how a brand shows",
+  "up in the world to building the digital tools",
+  "that help it grow. I'm interested in making",
+  "things that feel distinctly their own in a world",
+  "where so much is starting to look the same.",
+];
+
 export default function Home() {
   const contactRef = useRef<HTMLElement>(null);
 
@@ -144,6 +157,17 @@ export default function Home() {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    if (!activeProject) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setActiveProject(null);
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [activeProject]);
+
   return (
     <main className="portfolio">
       <Navbar />
@@ -224,7 +248,7 @@ export default function Home() {
             </h1>
           </div>
 
-          <p className="hero-description">
+          <p className="hero-description hero-description-desktop">
             <span className="hero-description-line">
               <span>I’m a full-stack engineer and digital</span>
             </span>
@@ -240,6 +264,14 @@ export default function Home() {
             <span className="hero-description-line">
               <span>nature, history, and chihuahuas.</span>
             </span>
+          </p>
+
+          <p className="hero-description hero-description-mobile">
+            I’m a <span className="nowrap">full-stack</span> engineer and
+            digital designer based on the{" "}
+            <span className="nowrap">East Coast.</span> Drawn to both thoughtful
+            simplicity and creative experimentation. I love nature, history, and
+            chihuahuas.
           </p>
 
           <a href="#contact" className="hero-contact" aria-label="Contact me">
@@ -263,66 +295,15 @@ export default function Home() {
 
           <div className="about-body">
             <p>
-              <span
-                className="about-line"
-                style={{ "--line-index": 0 } as React.CSSProperties}
-              >
-                <span>I'm drawn to the intersection of design and</span>
-              </span>
-              <span
-                className="about-line"
-                style={{ "--line-index": 1 } as React.CSSProperties}
-              >
-                <span>technology, and the possibilities that open up</span>
-              </span>
-              <span
-                className="about-line"
-                style={{ "--line-index": 2 } as React.CSSProperties}
-              >
-                <span>when the two come together. I work with</span>
-              </span>
-              <span
-                className="about-line"
-                style={{ "--line-index": 3 } as React.CSSProperties}
-              >
-                <span>businesses and individuals to strengthen</span>
-              </span>
-              <span
-                className="about-line"
-                style={{ "--line-index": 4 } as React.CSSProperties}
-              >
-                <span>their presence and turn ideas into something</span>
-              </span>
-              <span
-                className="about-line"
-                style={{ "--line-index": 5 } as React.CSSProperties}
-              >
-                <span>tangible, from shaping how a brand shows</span>
-              </span>
-              <span
-                className="about-line"
-                style={{ "--line-index": 6 } as React.CSSProperties}
-              >
-                <span>up in the world to building the digital tools</span>
-              </span>
-              <span
-                className="about-line"
-                style={{ "--line-index": 7 } as React.CSSProperties}
-              >
-                <span>that help it grow. I'm interested in making</span>
-              </span>
-              <span
-                className="about-line"
-                style={{ "--line-index": 8 } as React.CSSProperties}
-              >
-                <span>things that feel distinctly their own in a world</span>
-              </span>
-              <span
-                className="about-line"
-                style={{ "--line-index": 9 } as React.CSSProperties}
-              >
-                <span>where so much is starting to look the same.</span>
-              </span>
+              {aboutLines.map((line, i) => (
+                <span
+                  key={i}
+                  className="about-line"
+                  style={{ "--line-index": i } as React.CSSProperties}
+                >
+                  <span>{line}</span>{" "}
+                </span>
+              ))}
             </p>
           </div>
         </div>
@@ -652,8 +633,10 @@ export default function Home() {
                             establishing the styling and design across all of
                             its pages. I also worked on the backend, wiring the
                             frontend to the Quarkus services and developing the
-                            functionality needed to manage member records. A
-                            major part of my work was developing an AI-powered
+                            functionality needed to manage member records.
+                          </p>
+                          <p>
+                            A major part of my work was developing an AI-powered
                             support agent for the portal, a capability it hadn't
                             previously offered. I built the agent and its custom
                             business logic to help members navigate the portal
