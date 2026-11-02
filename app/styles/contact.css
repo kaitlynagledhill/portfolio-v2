@@ -401,21 +401,25 @@
   }
 
   .contact-social-links {
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 8px;
+    gap: 20px;
     margin-top: 36px;
   }
 
   .contact-social-group,
   .contact-meta-group {
+    display: flex;
+    width: 100%;
     justify-content: flex-start;
+    flex-wrap: wrap;
     gap: 16px 24px;
   }
 
   .contact-meta-group {
-    gap: 6px 8px;
+    gap: 6px 16px;
   }
 
   .contact-social-links a {
