@@ -18,17 +18,34 @@ const barlowCondensed = Barlow_Condensed({
   weight: ["500"],
 });
 
-const title = "Kaitlyn Gledhill | Full Stack Engineer, Digital Designer";
-const description = "Full stack engineer and digital designer.";
+const title = "Kaitlyn Gledhill. Full-Stack Engineer & Digital Designer.";
+const description =
+  "Kaitlyn Gledhill is a full-stack engineer and digital designer based on the East Coast.";
 
 export const metadata: Metadata = {
-  // metadataBase: new URL("https://yourdomain.com"), // add once deployed
+  metadataBase: new URL("https://kaitlyn-gledhill.com"),
   title,
   description,
   openGraph: {
     title,
     description,
+    url: "https://kaitlyn-gledhill.com",
+    siteName: "Kaitlyn Gledhill",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Kaitlyn Gledhill portfolio website",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/og-image.jpg"],
   },
 };
 
