@@ -366,6 +366,27 @@ export default function Home() {
               </div>
             </button>
 
+            {/* 2. SICK GIRL PODCAST */}
+            <button
+              type="button"
+              className="work-card"
+              onClick={() => setActiveProject("sick-girl")}
+            >
+              <div className="work-preview">
+                <motion.img
+                  layoutId="project-image-sick-girl"
+                  src="/images/work/sick-girl/cover.webp"
+                  alt="Sick Girl Podcast visual design"
+                />
+              </div>
+              <div className="work-card-info">
+                <div>
+                  <h3>Sick Girl Podcast</h3>
+                  <p>Podcast Design &amp; Digital Graphics</p>
+                </div>
+              </div>
+            </button>
+
             {/* 3. STEVE'S CNC */}
             <button
               type="button"
@@ -601,6 +622,60 @@ export default function Home() {
                     </div>
                   </div>
                 )}
+
+                {activeProject === "sick-girl" && (
+                <div className="project-detail">
+                  <div className="project-detail-content">
+                    <div className="project-detail-copy">
+                      <p className="project-modal-category">
+                        Podcast Design &amp; Digital Experience
+                      </p>
+
+                      <h2 id="project-modal-title">Sick Girl Podcast</h2>
+
+                      <div className="project-modal-description">
+                        <h3>Overview</h3>
+                        <p>
+                          Sick Girl is a podcast hosted by Ashley Singleton,
+                          exploring chronic illness, mental health, and the
+                          realities of everyday life. The visual direction
+                          brings a bold, editorial feel to the podcast, balancing
+                          the subject matter with a style that feels personal,
+                          expressive, and approachable.
+                        </p>
+
+                        <h3>My Role</h3>
+                        <p>
+                          I worked directly with Ashley to develop the podcast's
+                          visual direction and create a cohesive set of digital
+                          assets. I designed the podcast artwork, custom video
+                          backgrounds, YouTube channel graphics, and a reusable
+                          thumbnail template. I also prepared platform-specific
+                          artwork and promotional graphics, refining the designs
+                          with Ashley throughout the process.
+                        </p>
+
+                        <div className="project-modal-tech">
+                          {["Adobe Photoshop"].map(
+                            (item) => (
+                              <span key={item}>{item}</span>
+                            )
+                          )}
+                        </div>
+
+                        <a
+                          className="project-modal-link"
+                          href="https://podcasts.apple.com/us/podcast/sick-girl/id1824994686"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Listen on Apple Podcasts
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
 
                 {activeProject === "bcbs" && (
                   <div className="project-detail">
