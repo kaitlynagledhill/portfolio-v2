@@ -824,7 +824,7 @@ export default function Home() {
           <div className="contact-meta-group">
             <a
               className="nav-link"
-              href="YOUR_V1_URL"
+              href="https://v1.kaitlyn-gledhill.com"
               target="_blank"
               rel="noopener noreferrer"
             >
