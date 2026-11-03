@@ -481,24 +481,12 @@ export default function Home() {
                         <div className="project-modal-description">
                           <h3>Overview</h3>
                           <p>
-                            Pilot Collective is a talent partnerships agency
-                            working across entertainment, sports, and culture.
-                            The website brings together the agency's work,
-                            partnerships, and story in one place, creating a
-                            digital presence that reflects its identity and the
-                            range of projects it brings to life.
+                          Pilot Collective is a talent partnerships agency working at the intersection of entertainment, sports, and culture. Its work brings together talent, brands, and organizations to create partnerships and experiences with cultural reach. The website was designed to bring the agency's work, people, and partnerships together in a cohesive digital experience, with a visual identity that feels as considered as the work itself.
                           </p>
 
                           <h3>My Role</h3>
                           <p>
-                            I designed and developed a custom, multi-page
-                            website, translating the agency's brand into a
-                            cohesive digital experience. I built reusable
-                            components, responsive navigation, and adaptive
-                            layouts, while integrating video and image content
-                            throughout the site. I also managed the process from
-                            design decisions and content integration through
-                            testing and deployment.
+                          I led the design and development of a custom, multi-page website, translating Pilot Collective's brand into a fully realized digital experience. Built with Next.js, React, and TypeScript, the site features a responsive layout, reusable components, and integrated video and image content throughout. I owned the project from initial design decisions and front-end development through content integration, testing, and deployment.
                           </p>
 
                           <div className="project-modal-tech">
