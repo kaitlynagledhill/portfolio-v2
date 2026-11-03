@@ -573,7 +573,10 @@ export default function Home() {
                               <span key={item}>{item}</span>
                             ))}
                           </div>
-                        </div>
+                          <div className="project-modal-status">
+                            WEBSITE LAUNCHING SOON
+                          </div>                        
+                          </div>
                       </div>
                     </div>
                   </div>
