@@ -681,6 +681,16 @@ export default function Home() {
                           )}
                         </div>
 
+                      <div className="project-modal-links">
+                        <a
+                          className="project-modal-link"
+                          href="https://www.youtube.com/@Sickgirl.ashley"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Watch on YouTube
+                        </a>
+
                         <a
                           className="project-modal-link"
                           href="https://podcasts.apple.com/us/podcast/sick-girl/id1824994686"
@@ -689,6 +699,7 @@ export default function Home() {
                         >
                           Listen on Apple Podcasts
                         </a>
+                      </div>
                       </div>
                     </div>
                   </div>

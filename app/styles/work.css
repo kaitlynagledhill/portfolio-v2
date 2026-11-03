@@ -442,6 +442,17 @@ body.modal-open {
   transition: opacity 200ms ease;
 }
 
+.project-modal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 32px;
+}
+
+.project-modal-links .project-modal-link {
+  margin-top: 0;
+}
+
 .project-modal-link:hover {
   opacity: 0.65;
 }
