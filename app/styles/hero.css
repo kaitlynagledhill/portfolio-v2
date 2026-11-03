@@ -314,6 +314,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .hero-heading h1 {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+}
+
 @media (max-width: 900px) {
   .hero-description-desktop {
     display: none;
