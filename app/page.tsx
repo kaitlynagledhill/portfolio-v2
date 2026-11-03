@@ -430,7 +430,7 @@ export default function Home() {
               <div className="work-card-info">
                 <div>
                   <h3>Leave a Message</h3>
-                  <p>Embedded Systems &amp; Digital Experience</p>
+                  <p>Embedded Systems &amp; Web Development</p>
                 </div>
               </div>
             </button>
@@ -584,7 +584,7 @@ export default function Home() {
                     <div className="project-detail-content">
                       <div className="project-detail-copy">
                         <p className="project-modal-category">
-                          Embedded Systems &amp; Digital Experience
+                          Embedded Systems &amp; Web Development
                         </p>
 
                         <h2 id="project-modal-title">Leave a Message</h2>
@@ -592,23 +592,22 @@ export default function Home() {
                         <div className="project-modal-description">
                           <h3>Overview</h3>
                           <p>
-                            Leave a Message is an audio guestbook for events
-                            that lets guests leave personal voice recordings
-                            using a telephone handset. Guests hear a prerecorded
-                            greeting, leave their message, and create a
-                            collection of recordings that can be revisited long
-                            after the event.
+                            Leave a Message is an audio guestbook rental service
+                            built around a vintage rotary phone. Guests pick up
+                            the handset, hear a prerecorded greeting, and leave
+                            personal voice recordings that become a keepsake
+                            couples and hosts can revisit long after their event.
                           </p>
 
                           <h3>My Role</h3>
                           <p>
-                            I developed the device's embedded firmware in C
-                            using a Teensy microcontroller, implementing handset
-                            detection, greeting playback, audio recording, and
-                            file management. I also worked through hardware and
-                            firmware debugging and created the accompanying
-                            rental website, including an inquiry flow for
-                            prospective clients.
+                            I designed and developed the phone's embedded
+                            firmware in C using a Teensy microcontroller,
+                            implementing handset detection, greeting playback,
+                            audio recording, and file management. I also
+                            designed and built the accompanying rental website,
+                            creating a digital home for the business and an
+                            inquiry flow for prospective clients.
                           </p>
 
                           <div className="project-modal-tech">
@@ -616,13 +615,23 @@ export default function Home() {
                               "C",
                               "Teensy",
                               "Embedded Systems",
-                              "HTML",
+                              "Next.js",
+                              "React",
+                              "TypeScript",
                               "CSS",
-                              "JavaScript",
                             ].map((item) => (
                               <span key={item}>{item}</span>
                             ))}
                           </div>
+
+                          <a
+                            className="project-modal-link"
+                            href="https://leaveamessageevents.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Visit website
+                          </a>
                         </div>
                       </div>
                     </div>
