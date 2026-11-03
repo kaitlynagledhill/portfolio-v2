@@ -7,14 +7,14 @@ import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import DateStamp from "./components/DateStamp";
 
 const aboutLines = [
-  "I'm drawn to the intersection of design and",
-  "technology, and the possibilities that open up",
-  "when the two come together. I work with",
+  "I work at the intersection of design and",
+  "technology, exploring the possibilities that",
+  "open up when the two come together. I work with",
   "businesses and individuals to strengthen",
   "their presence and turn ideas into something",
   "tangible, from shaping how a brand shows",
   "up in the world to building the digital tools",
-  "that help it grow. I'm interested in making",
+  "that help it grow. I am interested in making",
   "things that feel distinctly their own in a world",
   "where so much is starting to look the same.",
 ];
@@ -791,7 +791,7 @@ export default function Home() {
           </div>
 
           <div className="contact-options">
-            <p className="contact-intro">I'm always interested in...</p>
+            <p className="contact-intro">I am always interested in...</p>
 
             <div className="contact-interests">
               {[
