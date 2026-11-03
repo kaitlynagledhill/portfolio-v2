@@ -8,15 +8,16 @@ import DateStamp from "./components/DateStamp";
 
 const aboutLines = [
   "I work at the intersection of design and",
-  "technology, exploring the possibilities that",
-  "open up when the two come together. I work",
-  "with businesses and individuals to strengthen",
-  "their presence and turn ideas into something",
-  "tangible, from shaping how a brand shows",
-  "up in the world to building the digital tools",
-  "that help it grow. I am interested in making",
-  "things that feel distinctly their own in a world",
-  "where so much is starting to look the same.",
+  "technology, exploring the possibilities",
+  "that open up when the two come together.",
+  "I work with businesses and individuals to",
+  "strengthen their presence and turn ideas",
+  "into something tangible, from shaping how",
+  "a brand shows up in the world to building",
+  "the digital tools that help it grow. I am",
+  "interested in making things that feel",
+  "distinctly their own in a world where so",
+  "much is starting to look the same.",
 ];
 
 export default function Home() {
