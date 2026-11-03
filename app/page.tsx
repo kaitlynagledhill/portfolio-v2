@@ -273,7 +273,7 @@ export default function Home() {
           </p>
 
           <p className="hero-description hero-description-mobile">
-            I’m a <span className="nowrap">full-stack</span> engineer and
+            I am a <span className="nowrap">full-stack</span> engineer and
             digital designer based on the{" "}
             <span className="nowrap">East Coast.</span> Drawn to both thoughtful
             simplicity and creative experimentation. I love nature, history, and
