@@ -9,8 +9,8 @@ import DateStamp from "./components/DateStamp";
 const aboutLines = [
   "I work at the intersection of design and",
   "technology, exploring the possibilities that",
-  "open up when the two come together. I work with",
-  "businesses and individuals to strengthen",
+  "open up when the two come together. I work",
+  "with businesses and individuals to strengthen",
   "their presence and turn ideas into something",
   "tangible, from shaping how a brand shows",
   "up in the world to building the digital tools",
