@@ -900,14 +900,14 @@ export default function Home() {
               GitHub
             </a>
 
-            {/* <a
-      className="nav-link"
-      href="/resume.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Resume
-    </a> */}
+            <a
+            className="nav-link"
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
 
             <a className="nav-link" href="mailto:kaitlynagledhill@gmail.com">
               Email

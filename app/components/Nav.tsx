@@ -34,14 +34,14 @@ export default function Nav() {
         <a href="#about" className="nav-link">
           about
         </a>
-        {/* <a
+        <a
           href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="nav-link"
         >
           resume
-        </a> */}
+        </a>
         <a href="#contact" className="nav-link">
           contact
         </a>
